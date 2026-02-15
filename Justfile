@@ -6,15 +6,15 @@
 @help:
     echo "A collection of commands to run various Ollama models in a containerized environment."
     echo "Available models, which auto-start the Ollama container if not already running:"
-    echo "  - ollama mistral: Run Mistral 7B (fast, balanced general-purpose model)"
-    echo "  - ollama llama: Run Llama 3.1 (Meta's flagship model)"
-    echo "  - ollama gemma: Run Gemma 2 (Google's efficient model)"
-    echo "  - ollama qwen: Run Qwen 2.5 (excellent multilingual & coding)"
-    echo "  - ollama phi: Run Phi-3 (Microsoft's small but capable model)"
-    echo "  - ollama deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
+    echo "  - just mistral: Run Mistral 7B (fast, balanced general-purpose model)"
+    echo "  - just llama: Run Llama 3.1 (Meta's flagship model)"
+    echo "  - just gemma: Run Gemma 2 (Google's efficient model)"
+    echo "  - just qwen: Run Qwen 2.5 (excellent multilingual & coding)"
+    echo "  - just phi: Run Phi-3 (Microsoft's small but capable model)"
+    echo "  - just deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
     echo "Other commands:"
-    echo "  - ollama start: Start Ollama container if not already running"
-    echo "  - ollama stop: Stop Ollama container"
+    echo "  - just start: Start Ollama container if not already running"
+    echo "  - just stop: Stop Ollama container"
 
 # Start Ollama container if not already running
 @start:
@@ -66,4 +66,3 @@
     -p 11434:11434 \
     -v ollama-data:/root/.ollama \
     docker.io/ollama/ollama
-
