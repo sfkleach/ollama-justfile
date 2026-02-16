@@ -1,3 +1,5 @@
+#!/usr/bin/just -f
+
 [private]
 @default:
     just -f {{justfile()}} --list
