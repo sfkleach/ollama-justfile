@@ -1,3 +1,5 @@
+#!/usr/bin/make -f
+
 .PHONY: default help start stop mistral llama gemma qwen phi deepseek-coder dostart
 
 default:
