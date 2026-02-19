@@ -2,6 +2,8 @@
 
 # Container runtime to use (podman or docker)
 CONTAINER_RUNTIME := podman
+# Command display name (e.g. "make" or "ollama-go") for help text.
+COMMAND := make
 
 .PHONY: default help start stop mistral llama gemma qwen phi deepseek-coder dostart
 
@@ -12,15 +14,15 @@ default:
 help:
 	@echo "A collection of commands to run various Ollama models in a containerized environment."
 	@echo "Available models, which auto-start the Ollama container if not already running:"
-	@echo "  - make mistral: Run Mistral 7B (fast, balanced general-purpose model)"
-	@echo "  - make llama: Run Llama 3.1 (Meta's flagship model)"
-	@echo "  - make gemma: Run Gemma 2 (Google's efficient model)"
-	@echo "  - make qwen: Run Qwen 2.5 (excellent multilingual & coding)"
-	@echo "  - make phi: Run Phi-3 (Microsoft's small but capable model)"
-	@echo "  - make deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
+	@echo "  - $(COMMAND) mistral: Run Mistral 7B (fast, balanced general-purpose model)"
+	@echo "  - $(COMMAND) llama: Run Llama 3.1 (Meta's flagship model)"
+	@echo "  - $(COMMAND) gemma: Run Gemma 2 (Google's efficient model)"
+	@echo "  - $(COMMAND) qwen: Run Qwen 2.5 (excellent multilingual & coding)"
+	@echo "  - $(COMMAND) phi: Run Phi-3 (Microsoft's small but capable model)"
+	@echo "  - $(COMMAND) deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
 	@echo "Other commands:"
-	@echo "  - make start: Start Ollama container if not already running"
-	@echo "  - make stop: Stop Ollama container"
+	@echo "  - $(COMMAND) start: Start Ollama container if not already running"
+	@echo "  - $(COMMAND) stop: Stop Ollama container"
 
 # Start Ollama container if not already running
 start:

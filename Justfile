@@ -1,7 +1,9 @@
 #!/usr/bin/just -f
 
-# Container runtime to use (podman or docker)
+# Container runtime to use (podman or docker).
 container_runtime := "podman"
+# Command display name (e.g. "just" or "ollama-go") for help text.
+command := "just"
 
 [private]
 @default:
@@ -11,15 +13,15 @@ container_runtime := "podman"
 @help:
     echo "A collection of commands to run various Ollama models in a containerized environment."
     echo "Available models, which auto-start the Ollama container if not already running:"
-    echo "  - just mistral: Run Mistral 7B (fast, balanced general-purpose model)"
-    echo "  - just llama: Run Llama 3.1 (Meta's flagship model)"
-    echo "  - just gemma: Run Gemma 2 (Google's efficient model)"
-    echo "  - just qwen: Run Qwen 2.5 (excellent multilingual & coding)"
-    echo "  - just phi: Run Phi-3 (Microsoft's small but capable model)"
-    echo "  - just deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
+    echo "  - {{command}} mistral: Run Mistral 7B (fast, balanced general-purpose model)"
+    echo "  - {{command}} llama: Run Llama 3.1 (Meta's flagship model)"
+    echo "  - {{command}} gemma: Run Gemma 2 (Google's efficient model)"
+    echo "  - {{command}} qwen: Run Qwen 2.5 (excellent multilingual & coding)"
+    echo "  - {{command}} phi: Run Phi-3 (Microsoft's small but capable model)"
+    echo "  - {{command}} deepseek-coder: Run DeepSeek Coder v2 (specialized for coding)"
     echo "Other commands:"
-    echo "  - just start: Start Ollama container if not already running"
-    echo "  - just stop: Stop Ollama container"
+    echo "  - {{command}} start: Start Ollama container if not already running"
+    echo "  - {{command}} stop: Stop Ollama container"
 
 # Start Ollama container if not already running
 @start:
